@@ -1,0 +1,26 @@
+-- Haskell Playground 1.0
+--String expr2 = "{a,b}{c,d}";
+--String result2 = "ac ad bc bd";
+--String expr3 = "{a,b}{c,g{e,m}}p{q,r}";
+--String result3 = "acpq acpr agepq agepr agmpq agmpr bcpq bcpr bgepq bgepr bgmpq bgmpr";
+
+splitChoices ""
+splitChoices "a,b"
+splitChoices "c,g{e,m}"
+
+scan2ChoicesEnd 0 "" "a,b}{c,g{e,m}}p{q,r}"
+scan2ChoicesEnd 0 "" "c,g{e,m}}p{q,r}"
+scan2ChoicesEnd 0 "" "}"
+
+expTextExpr ""
+expTextExpr "abc"
+
+expChoicesExpr ""
+expChoicesExpr "a,b,c"
+
+expEchoExpr ""
+expEchoExpr "abc"
+expEchoExpr "{a,b,c}"
+expEchoExpr "{a,b,c{e,m}}"
+expEchoExpr "{a,b}{c,d}"
+expEchoExpr "{a,b}{c,g{e,m}}p{q,r}"

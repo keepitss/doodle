@@ -1,0 +1,29 @@
+-- Haskell Playground 1.0
+--String expr2 = "{a,b}{c,d}";
+--String result2 = "ac ad bc bd";
+--String expr3 = "{a,b}{c,g{e,m}}p{q,r}";
+--String result3 = "acpq acpr agepq agepr agmpq agmpr bcpq bcpr bgepq bgepr bgmpq bgmpr";
+
+splitOpts ""
+splitOpts "a,b"
+splitOpts "c,g{e,m}"
+
+extractOptStr 0 "" "a,b}{c,g{e,m}}p{q,r}"
+extractOptStr 0 "" "c,g{e,m}}p{q,r}"
+extractOptStr 0 "" "}"
+
+expText ""
+expText "abc"
+
+expOpts ""
+expOpts "a,b,c"
+
+exp ""
+exp "abc"
+exp "{a,b,c}"
+exp "{a,b,c{e,m}}"
+exp "{a,b}{c,d}"
+exp "{a,b}{c,g{e,m}}p{q,r}"
+
+concat []
+concat [["a"],["bc", "de"]]
